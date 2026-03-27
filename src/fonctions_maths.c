@@ -54,39 +54,37 @@ int Multiplication(void)
 
 }
 
+int soustraction(int *essais){
+  int NbA;
+  int NbB;
+  int resultat;
+  int reponse;
+  int temp;
 
-int Soustraction(void)
-{
-    srand(time(NULL));
+  NbA = rand() % 101;
+  NbB = rand() % 101;
 
-    int nombre1 = rand() % 101;
-    int nombre2 = rand() % 101;
-    int nombre3 = 0;
-    int reponse;
+  if (NbA > NbB){
+    temp = NbA;
+    NbA = NbB;
+    NbB = temp;
+  }
 
+  resultat = NbB - NbA;
 
-    if (nombre1 < nombre2){
-        nombre3 = nombre1;
-        nombre1 = nombre2;
-        nombre2 = nombre3;
-    }
+  printf("%d - %d = ?\n", NbB, NbA);
+  printf("Entrez le resultat : ");
 
-
-    printf("%d x %d = ? /n", nombre1, nombre2);
-    printf("Entrez le résultat/n");
+  do{
     scanf("%d", &reponse);
-    printf("Vous avez entré %d ! /n", reponse);
-    
+    printf("Vous avez entré %d\n", reponse);
+    (*essais)++;
+  } while (resultat != reponse);
 
+  printf("Bravo\n");
+  printf("Vous avez réussi en : %d essai(s)\n", *essais);
 
-    if (reponse == (nombre1 * nombre2)){
-        printf("Bravo /n");
-    } else {
-        printf("raté /n");
-    }
-
-
-
+  return 0;
 }
 
 
