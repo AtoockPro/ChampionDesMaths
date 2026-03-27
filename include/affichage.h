@@ -1,0 +1,2 @@
+#ifndef AFFICHAGE.H
+#define AFFICHAGE.H
