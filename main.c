@@ -6,7 +6,7 @@
 
 int main(){
     srand((unsigned int)time(NULL));
-    char nom[25];
+    char nom[10];
     int score = 0;
     int choix = 6;
     
@@ -18,13 +18,13 @@ int main(){
     scanf("%24s", nom);
 
     int score_existant = lire_score_joueur(nom);
-    printf("\n+--------------------------------------+ \n"); 
-    printf("\n| Bonjour %s!                          | \n", nom);
-    printf("\n+--------------------------------------+ \n"); 
+    printf("+-----------------------------------+\n"); 
+    printf("| Bonjour %s !                    |\n", nom);
+    printf("+-----------------------------------+\n"); 
     
     if (score_existant > 0) {
         printf("+-----------------------------------+\n");
-        printf("| Score precedent : %d points       |\n", score_existant);
+        printf("| Score precedent : %d points      |\n", score_existant);
         printf("| Vous reprenez depuis votre score  |\n");
         printf("+-----------------------------------+\n");
         score = score_existant;
@@ -33,17 +33,19 @@ int main(){
         printf("| Nouveau joueur - Score : 0        |\n");
         printf("+-----------------------------------+\n");
     }
-    printf("+-----------------------------------+\n\n");
-    
+
+
     do {
         printf("+-----------------------------------+\n");
-        printf("| Score actuel : %d points          |\n", score);
+        printf("| Score actuel : %d points         |\n", score);
+        printf("+-----------------------------------+\n");
         printf("+-----------------------------------+\n");
         printf("| 1:Addition                        |\n"
                "| 2:Soustraction                    |\n"
                "| 3:Multiplication                  |\n"
                "| 4:Tables des multiplications      |\n"
                "| 5:Division                        |\n"
+               "| 6:Conversion de temps             |\n"
                "| 0:Sortir du jeu                   |\n"
                "+-----------------------------------+\n");
         printf("Quel est votre choix ? ");
@@ -79,6 +81,12 @@ int main(){
             case 5:
                 printf("\n=== Division ===\n");
                 points = division();
+                score += points;
+                printf("Score total : %d points\n\n", score);
+                break;
+            case 6:
+                printf("\n=== Conversion de temps ===\n");
+                points = conversion_temps();
                 score += points;
                 printf("Score total : %d points\n\n", score);
                 break;
