@@ -1,2 +1,0 @@
-#ifndef FONCTIONS_MATHS.H
-#define FONCTIONS_MATHS.H
