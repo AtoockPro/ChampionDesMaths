@@ -39,7 +39,7 @@ int lire_score_joueur(char nom[]) {
 
     while (fgets(ligne, sizeof(ligne), fichier) != NULL) {
 
-        if (sscanf(ligne, "Nom : %24s | Points : %d", nom_fichier, &score_fichier) == 2) {
+        if (sscanf(ligne, "Nom : %9s | Points : %d", nom_fichier, &score_fichier) == 2) {
             if (strcmp(nom_fichier, nom) == 0) {
                 if (score_fichier > score_max) {
                     score_max = score_fichier;
