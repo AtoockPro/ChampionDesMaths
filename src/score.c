@@ -29,7 +29,7 @@ void enregistrer_score(char nom[], int score){
 int lire_score_joueur(char nom[]) {
     FILE *fichier = fopen("score.txt", "r");
     char ligne[200];
-    char nom_fichier[25];
+    char nom_fichier[10];
     int score_fichier;
     int score_max = 0;
     
