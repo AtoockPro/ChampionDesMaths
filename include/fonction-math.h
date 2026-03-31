@@ -7,6 +7,7 @@ int addition();
 int soustraction();
 int multiplication();
 int division();
+int conversion_temps();
 
 #endif
 

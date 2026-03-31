@@ -29,7 +29,7 @@ int addition() {
       printf("Faux ! Reessaie\n");
     }
     
-    if (essais >= 3) {
+    if (essais > 3) {
       printf("Le resultat correct est : %d\n", nombre1 + nombre2);
       return 0;
     }
@@ -71,7 +71,7 @@ int soustraction() {
       printf("Faux ! Reessaie\n");
     }
 
-    if(essais >= 3) {
+    if(essais > 3) {
       printf("Le resultat correct est : %d\n", nombre1 - nombre2);
       return 0;
     }
@@ -107,7 +107,7 @@ int multiplication() {
       printf("Faux ! Reessaie\n");
     }
 
-    if(essais >= 3) {
+    if(essais > 3) {
       printf("Le resultat correct est : %d\n", nombre1 * nombre2);
       return 0;
     }
@@ -179,7 +179,7 @@ int division() {
       printf("Faux ! Reessaie\n");
     }
 
-    if (essais >= 3) {
+    if (essais > 3) {
       printf("Le resultat correct est : %d\n", nombre1 / nombre2);
       return 0;
     }
@@ -195,3 +195,40 @@ int division() {
   return points;
 }
 
+int conversion_temps() {
+  srand(time(NULL));
+  int heures, minutes, reponse;
+  int essais = 0;
+
+  heures = rand()%12 + 1;
+  minutes = rand()%60;
+
+  int resultat = heures * 60 + minutes;
+
+  printf("%d h %d min = ? minutes\n", heures, minutes);
+
+  do {
+    printf("Entrez le resultat : ");
+    scanf("%d", &reponse);
+    printf("Vous avez entrez : %d \n", reponse);
+    essais++;
+
+    if(reponse != resultat) {
+      printf("Faux ! Reessaie\n");
+    }
+
+    if (essais > 3) {
+      printf("Le resultat correct est : %d\n", resultat);
+      return 0;
+    }
+
+  } while(reponse != resultat);
+
+  printf("Bravo !\n");
+  printf("Nombre d'essais : %d\n", essais);
+
+  int points = calculer_points(essais);
+  printf("Points gagnés : %d\n", points);
+
+  return points;
+}
