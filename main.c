@@ -6,7 +6,7 @@
 
 int main(){
     srand((unsigned int)time(NULL));
-    char nom[10];
+    char nom[24];
     int score = 0;
     int choix = 6;
     
